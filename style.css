@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: lightblue;
+  font-family: "Roboto", sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+
+.col {
+  width: 50%;
+}
+
+.col-range {
+  width: 30% !important;
+  background-color: white;
+  height: 100vh;
+  padding: 3%;
+}
+
+.col-preview {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  width: 60%;
+  padding: 5%;
+  text-align: center;
+}
+
+form {
+  padding-top: 30%;
+}
+
+input {
+  width: 90%;
+  font-size: 24pt;
+}
+
+footer {
+  padding: 5%;
+}
+
+#owner {
+  margin-top: 50%;
+}
+
+.github_icon {
+  width: 30px;
+}
+
+.code {
+  background-color: #3c3442;
+  padding: 3%;
+  color: white;
+}
+
+.code span {
+  color: rgb(250, 99, 212);
+}
+
+@media (max-width: 768px) {
+  .col-range {
+    width: 100% !important;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .container {
+    margin: 5% 0 5% 0;
+  }
+}

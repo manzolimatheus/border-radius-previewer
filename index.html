@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BorderRadiusPreview</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/298/package_1f4e6.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="row">
+        <div class="col col-range">
+          <div>
+            <h1>📦 Preview de raio da borda</h1>
+            <form @submit="SetBorderPx">
+              <label for="border_radius">Tamanho em PX do raio da borda</label>
+              <br />
+              <input
+                type="range"
+                id="border_radius"
+                @change="SetBorderRange"
+                v-model="input_border_radius"
+                max="200"
+              />
+              <br />
+              <input
+                type="number"
+                id="border_radius_px"
+                v-model="border_radius_px"
+                @change="SetBorderPx"
+                max="200"
+              />px
+            </form>
+            <br />
+            <h3>Código CSS pronto:</h3>
+            <br />
+            <div class="code">
+              <code>
+                <span>.sua-classe</span>{
+                <br />
+                border-radius: <span>{{border_radius_px}}px</span> ;
+                <br />
+                }
+              </code>
+            </div>
+          </div>
+          <footer>
+            <p id="owner">Feito por @manzolimatheus - {{AnoAtual}}</p>
+            <a href="https://github.com/manzolimatheus">
+              <img
+                src="https://image.flaticon.com/icons/png/512/25/25231.png"
+                alt="Github Icon"
+                class="github_icon"
+              />
+            </a>
+          </footer>
+        </div>
+        <div class="col col-preview">
+          <div class="container" v-bind:style="{borderRadius: border_radius}">
+            <h2>Preview de componente</h2>
+            <br />
+            <img
+              src="https://source.unsplash.com/random/300x300"
+              alt="Dummy image"
+            />
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+              imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+              mollis pretium. Integer tincidunt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
